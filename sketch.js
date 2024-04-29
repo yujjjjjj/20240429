@@ -50,13 +50,15 @@ function draw() {
 
        if(radioElement.value()=="紅底"){
           colorMode(HSB)
-
           fill(pixel[0],80,80)
           rotate(pixel[0]/100)
           rectMode(CENTER)
-          rect(x,y,span*0.6)
+          rect(0,0,span*0.6)
           fill(0)
           ellipse(0,0,10)
+
+        pop()
+    }
 
        if(radioElement.value()=="文字"){
             const density = 'Ñ@#W$9876543210?!abc;:+=-,._ ';
@@ -74,7 +76,6 @@ function draw() {
       }
 
     }
-  pop()
+ 
 
   }
-}

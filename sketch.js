@@ -11,7 +11,14 @@ function setup() {
   captureGraphics.translate(capture_width,0)
   captureGraphics.scale(-1,1)
   capture.hide()
-  //---選鈕的介面
+
+  //選鈕的介面
+  var radioElement = createRadio();
+  radioElement.position(width/2-300,20)
+  radioElement.option("方塊")
+  radioElement.option("圓圈")
+  radioElement.style("color","#fff")
+  radioElement.style("font-size","30px")
 }
 
 function draw() {
@@ -25,7 +32,12 @@ function draw() {
      for(var y=0;y<captureGraphics.height ; y=y+span){
        var pixel = captureGraphics.get(x,y)
        fill(pixel)
-       rect(x,y,span)
+       if(radioElement.value()=="方塊"){
+        rect(x,y,span)
+       }
+       if(radioElement.value()=="圓圈"){
+        ellipse(x,y,span)
+       }
        // ellipse(x,y,span)
 
 
